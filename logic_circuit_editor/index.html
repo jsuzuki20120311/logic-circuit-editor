@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<head>
+    <title>論理回路エディタ</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+
+        <script type="text/javascript" src="js/onload.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>       
+        
+        <script type="text/javascript" src="js/save_data.js"></script>
+        <script type="text/javascript" src="js/Config.js"></script> 
+        <script type="text/javascript" src="js/Counter.js"></script>
+        <script type="text/javascript" src="js/Parts.js"></script>
+        <script type="text/javascript" src="js/GUI.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>        
+        <script type="text/javascript" src="js/create.js"></script>        
+        <script type="text/javascript" src="js/all_delete.js"></script>
+        
+        
+        <script type="text/javascript" src="export/export_file.js"></script>
+
+        <script type="text/javascript" src="js/jQuery/jquery-1.8.2.js"></script>
+        <script type="text/javascript" src="js/jQuery/jquery-ui-1.9.0.custom.min.js"></script>
+        
+	<link rel="shortcut icon" href="image/favicon.ico" ></link>
+	<link rel="stylesheet" type="text/css" href="css/index.css" media="screen" ></link>
+</head>
+ 
+<body>   
+
+<div id="debug_monitor">
+        <textarea id="output_area">20120909</textarea>
+        <a id="link" href="asdf.jpeg"></a>
+        <p class="box_title">　デバッグ用</p>
+        <textarea id="result_read" rows="10" cols="10"  style="display:none;" >
+        </textarea>
+</div>
+        
+<div id="op_back">
+    
+</div>        
+        
+<div id="main">
+        <svg id="svgbox" width="100%" height="100%">
+            <g id="deleteitembox">
+                    <g id="gomi">
+                        
+                    </g>
+            </g>
+
+            <g id="tmp_back">
+                    <g id="back_white">
+                            <rect x="0" y="0" width="1366" height="768" fill="#ffffff" />
+                    </g>
+            </g>                 
+                
+            <g id="haikei">
+            </g> 
+                
+            <g id ="kakidashi_area">
+            </g>                
+                
+            <g id="ffbox">
+            </g>
+
+            <g id="gatebox">
+            </g>
+
+            <g id="textbox">
+            </g>     
+               
+            <g id="linebox">
+            </g>  
+                
+            <g id="kuromarubox">
+                    <g id="create_kuromarubox">
+                    </g>
+            </g>
+                
+            <g id="editbox">
+                    <g id="back_edit">
+                    </g>
+            </g>
+            
+            <g id="tmp">
+            </g>
+	</svg>
+</div> 
+
+<div id="toolbox">
+        
+        <img src="image/toolbarback.png" height="8px">
+        <p id="header_toolbox" class="box_title">　ツールボックス</p>
+
+        <p id="text_mode">選択されたオブジェクト：通常</p>
+        
+        <div id="toolbox_content">
+           
+            <br />
+            <br />
+            
+            <hr />
+            
+            <br />
+            
+            <BUTTON type="submit" id="BUTTON_ANDdrag">AND</BUTTON>
+            <BUTTON type="submit" id="BUTTON_NANDdrag">NAND</BUTTON>
+            <BUTTON type="submit" id="BUTTON_ORdrag">OR</BUTTON>
+            <BUTTON type="submit" id="BUTTON_NORdrag">NOR</BUTTON>
+            <BUTTON type="submit" id="BUTTON_NOTdrag">NOT</BUTTON>
+            <BUTTON type="submit" id="BUTTON_EXORdrag">XOR</BUTTON>  
+            
+            <BUTTON type="submit" id="BUTTON_RSFFdrag">RSFF</BUTTON>              
+            <BUTTON type="submit" id="BUTTON_JKFFdrag">JKFF</BUTTON>              
+            <BUTTON type="submit" id="BUTTON_TFFdrag">TFF</BUTTON>              
+            <BUTTON type="submit" id="BUTTON_DFFdrag">DFF</BUTTON>              
+            
+            <BUTTON type="submit" id="BUTTON_linedrag">line</BUTTON>
+            <BUTTON type="submit" id="BUTTON_indrag">in</BUTTON>
+            <BUTTON type="submit" id="BUTTON_outdrag">out</BUTTON>
+
+            
+            <br />
+            <br />
+            
+            <hr />
+            
+            <br />            
+
+            <br />
+            <br />
+
+        </div>
+</div>
+
+<div id="op_front">        
+<div id="object_palette">
+    
+        <p class="icon_op" id="icon_op_1">
+                <img id="icon_img_1" src="image/icon_editor/icon_gate_1.jpg" />
+        </p>
+
+        <p class="icon_op" id="icon_op_2">
+                <img id="icon_img_2" src="image/icon_editor/icon_ff_1.jpg" />
+        </p>
+
+        <p class="icon_op" id="icon_op_3">
+                <img id="icon_img_3" src="image/icon_editor/icon_line_1.jpg" />
+        </p>
+
+        <p class="icon_op" id="icon_op_4">
+                <img id="icon_img_4" src="image/icon_editor/icon_text_1.jpg" />
+        </p>
+        
+        <div id="object_parts_area">
+                <div class="op_area" id="op_area_1">
+                        <img class="parts_posi_x_1 parts_posi_y_1" id="icon_parts_1_1" draggable="false" src="image/icon_editor/icon_AND_1.jpg" />                        
+                        <img class="parts_posi_x_2 parts_posi_y_1" id="icon_parts_1_2" draggable="false" src="image/icon_editor/icon_OR_1.jpg" />
+                        <img class="parts_posi_x_1 parts_posi_y_2" id="icon_parts_1_3" draggable="false" src="image/icon_editor/icon_NOT_1.jpg" />                        
+                        <img class="parts_posi_x_2 parts_posi_y_2" id="icon_parts_1_4" draggable="false" src="image/icon_editor/icon_NAND_1.jpg" />
+                        <img class="parts_posi_x_1 parts_posi_y_3" id="icon_parts_1_5" draggable="false" src="image/icon_editor/icon_NOR_1.jpg" />                        
+                        <img class="parts_posi_x_2 parts_posi_y_3" id="icon_parts_1_6" draggable="false" src="image/icon_editor/icon_EXOR_1.jpg" />
+                </div>
+            
+                <div class="op_area" id="op_area_2">
+                        <img class="parts_posi_x_1 parts_posi_y_1" id="icon_parts_2_1" draggable="false" src="image/icon_editor/icon_JKFF_1.jpg" /> 
+                        <img class="parts_posi_x_2 parts_posi_y_1" id="icon_parts_2_2" draggable="false" src="image/icon_editor/icon_RSFF_1.jpg" /> 
+                        <img class="parts_posi_x_1 parts_posi_y_2" id="icon_parts_2_3" draggable="false" src="image/icon_editor/icon_DFF_1.jpg" /> 
+                        <img class="parts_posi_x_2 parts_posi_y_2" id="icon_parts_2_4" draggable="false" src="image/icon_editor/icon_TFF_1.jpg" />                         
+                </div>
+
+                <div class="op_area" id="op_area_3">
+                        <img class="parts_posi_x_1 parts_posi_y_1" id="icon_parts_3_1" draggable="false" src="image/icon_editor/icon_LINEOBJ_1.jpg" />                        
+                </div>
+                <div class="op_area" id="op_area_4">
+                        <img class="parts_posi_x_1 parts_posi_y_1" id="icon_parts_4_1" draggable="false" src="image/icon_editor/icon_TEXTOBJ_1.jpg" />                        
+                </div>
+        </div>
+</div>
+</div>    
+
+<div id="footer">
+        <img id="icon_img_4" src="image/icon_editor/zahyou.jpg" />
+        <p id="label_x_zahyo">Ｘ座標：</p>
+        <p id="label_y_zahyo">Ｙ座標：</p>
+</div>        
+
+<!--
+ここからメニューバー
+-->        
+
+<div id ="toolbar">
+    <img src="image/icon_editor/icon_shinki_1.jpg" id="BUTTON_Reload" class="toolbar_button"/>
+    <img src="image/icon_editor/icon_hozon_1.jpg"  id="BUTTON_hozon" class="toolbar_button" />   
+    <img src="image/icon_editor/icon_yajirushi_1.jpg" id="BUTTON_normal" class="toolbar_button" />
+    <img src="image/icon_editor/icon_keshigomu_1.jpg" id="BUTTON_eraser" class="toolbar_button" />
+</div>
+
+<div id="itembox">
+    <div id="menu_1" class="menu">
+    <!--<BUTTON type="button" id="menu_button_1" class="menu_button">ファイル</BUTTON>-->
+    <div id="menu_button_1" class="menu_button"><p class="text_button">ファイル</p></div>
+    <ul id="sub_menu_1" class="sub_menu">
+        <li id="menu_new">新規ファイル</li>
+        <li id="menu_open">開く</li>
+        <li id="menu_save">名前をつけて保存</li>
+    </ul>
+    </div>
+
+    
+    <div id="menu_2" class="menu">            
+    <!--<BUTTON type="button" id="menu_button_1" class="menu_button">ファイル</BUTTON>-->
+    <div id="menu_button_2" class="menu_button"><p class="text_button">表示</p></div>
+    <ul id="sub_menu_2" class="sub_menu">
+        <li id="menu_kakidashi">書きだし領域</li>
+    </ul>
+    </div>
+    
+    <div id="menu_3" class="menu">            
+    <!--<BUTTON type="button" id="menu_button_1" class="menu_button">ファイル</BUTTON>-->
+    <div id="menu_button_3" class="menu_button"><p class="text_button">ヘルプ</p></div>
+    <ul id="sub_menu_3" class="sub_menu">
+        <li id="menu_version">バージョン情報</li>
+    </ul>
+    </div>
+    
+</div>
+
+<div id="OPEN_DIALOG">
+        <p class="box_title"> ファイルを開く</p>
+        <br>
+        ファイルを選択<input type="file" size="10" id="INPUT_FILE">
+        <br><br><br>
+        <button id="BUTTON_OPEN">開く</button>      <button id="BUTTON_CLOSE">閉じる</button>
+        <textarea id="result_read" rows="1" cols="1"  style="display:none;" ></textarea>
+</div>
+
+<div id="SAVE_DIALOG">
+        <p class="box_title">　名前を付けて保存</p>
+        <br>
+        <br>
+        <a href="dummy" id="BUTTON_SAVE">編集可能形式で保存</a>
+        <br>
+        <br>
+        <a href="dummy" id="BUTTON_write_svg" target="_blank">SVG形式の画像として保存</a>
+        <br>
+        <br>
+        <a href="dummy" id="BUTTON_pointgetter" target="_blank">EPS形式の画像として保存</a>
+        <br><br><br>
+        <button id="sub_savedia_BUTTON_CLOSE">閉じる</button>
+</div> 
+
+<div id="VERSION_DIALOG">
+        <p class="box_title">　バージョン情報</p>
+        <br>
+        <br>
+	バージョン：20130315α
+	<br><br><br>
+        <button id="sub_verdia_BUTTON_CLOSE">閉じる</button>
+</div>
+
+</body>
+
+</html>
