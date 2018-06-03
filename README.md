@@ -1,4 +1,4 @@
-# logic_circuit_editor
+# logic-circuit-editor
 
 ## 概要
 
