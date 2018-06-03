@@ -287,7 +287,7 @@ var Left_frame = function()
 		var num_width = get_num_point( this.width );	//文字列状態の縦の長さからpxを外した数字の部分のみを取り出す
 		var num_height = get_num_point( this.height );	//文字列状態の横の長さからpxを外した数字の部分のみを取り出す
 
-		var rect = document.createElementNS("http://www.w3.org/2000/svg", "svg:rect")
+		var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect")
 		rect.setAttribute("x",0);
 		rect.setAttribute("y",0);
 		rect.setAttribute("width",num_width);
@@ -302,7 +302,7 @@ var Left_frame = function()
 		{
 			if( i%10 == 0 )
 			{
-				line[i] = document.createElementNS("http://www.w3.org/2000/svg", "svg:line");
+				line[i] = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
 				line[i].setAttribute("x1",i);
 				line[i].setAttribute("y1",0);
@@ -318,7 +318,7 @@ var Left_frame = function()
 		{
 			if( i%10 == 0 )
 			{	
-				line[i] = document.createElementNS("http://www.w3.org/2000/svg", "svg:line");	
+				line[i] = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
 				line[i].setAttribute("x1",0);
 				line[i].setAttribute("y1",i);

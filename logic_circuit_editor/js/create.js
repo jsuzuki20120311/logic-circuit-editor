@@ -11,7 +11,7 @@ function create_text(type,number,conf,x,y,str)
 	var stoppy = null;
 
 	// g(group)要素を作成
-	var g = document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+	var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 	g.setAttribute("id","g_"+ type + "_" + number );
 	document.getElementById("textbox").appendChild(g);
 	g.setAttribute("transform","translate( " + x + " , " + y +" )" );
@@ -26,7 +26,7 @@ function create_text(type,number,conf,x,y,str)
 	text1.setAttribute("y", 50);
 	document.getElementById( "g_"+ type + "_" + number ).appendChild(text1);
 
-	var ellipse_point = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_point = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_point.setAttribute("id","ellipse_" + type + "_" + number + "_point" );
 	ellipse_point.setAttribute("cx",50-10);
 	ellipse_point.setAttribute("cy",50-20);
@@ -104,13 +104,13 @@ function create_kuromaru( type,number,conf,x,y )
 {
         
         // g(group)要素を作成
-	var g = document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+	var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 	g.setAttribute("id","g_"+ type + "_" + number );
 	document.getElementById("create_kuromarubox").appendChild(g);
 	g.setAttribute("transform","translate( 0 , 0 )" );
 	//グループ作成完了
         
-	var ellipse = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse.setAttribute("id","ellipse_" + type + "_" + number);
 	ellipse.setAttribute("cx",x);
 	ellipse.setAttribute("cy",y);
@@ -138,13 +138,13 @@ function create_kakidashi_area(obj,type,number,conf,x,y,width,height)
 	var stoppy = null;
 
 	// g(group)要素を作成
-	var g = document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+	var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 	g.setAttribute("id","g_"+ type + "_" + number );
 	document.getElementById("tmp_back").appendChild(g);
 	g.setAttribute("transform","translate( 0 , 0 )" );
 	//グループ作成完了
         
-        var rect = document.createElementNS("http://www.w3.org/2000/svg", "svg:rect");
+        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
 	rect.setAttribute("x", x);
         rect.setAttribute("y", y);
         rect.setAttribute("width", width);
@@ -156,7 +156,7 @@ function create_kakidashi_area(obj,type,number,conf,x,y,width,height)
         
 	document.getElementById("g_"+ type + "_" + number ).appendChild(rect);
 
-var ellipse_bottomleft = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+var ellipse_bottomleft = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_bottomleft.setAttribute("id","ellipse_" + type + "_" + number + "_bottomleft" );
 	ellipse_bottomleft.setAttribute("cx",x);
 	ellipse_bottomleft.setAttribute("cy", y + height );
@@ -167,7 +167,7 @@ var ellipse_bottomleft = document.createElementNS("http://www.w3.org/2000/svg", 
 	
 	document.getElementById("g_"+ type + "_" + number ).appendChild(ellipse_bottomleft);        
 
-        var ellipse_topright = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+        var ellipse_topright = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_topright.setAttribute("id","ellipse_" + type + "_" + number + "_topright" );
 	ellipse_topright.setAttribute("cx", x + width );
 	ellipse_topright.setAttribute("cy", y );
@@ -230,13 +230,13 @@ function create_ff(obj,type,number,conf,x,y)
 	}
 
 	// g(group)要素を作成
-	var g = document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+	var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 	g.setAttribute("id","g_"+ type + "_" + number );
 	document.getElementById("ffbox").appendChild(g);
 	g.setAttribute("transform","translate( " + x + " , " + y +" )" );
 	//グループ作成完了
 
-	var path = document.createElementNS("http://www.w3.org/2000/svg", "svg:path");
+	var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 	path.setAttribute("fill", "#FFFFFF");
 	path.setAttribute("d", "M 100 90" + d);
 	path.setAttribute("id", "path_" + type + "_" + number );
@@ -246,7 +246,7 @@ function create_ff(obj,type,number,conf,x,y)
 	document.getElementById("g_"+ type + "_" + number ).appendChild(path);
 
 
-	var ellipse_in1 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_in1 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_in1.setAttribute("id","ellipse_" + type + "_" + number + "_in1" );
 	ellipse_in1.setAttribute("cx","40");
 	ellipse_in1.setAttribute("cy","60");
@@ -258,7 +258,7 @@ function create_ff(obj,type,number,conf,x,y)
 	document.getElementById("g_"+ type + "_" + number ).appendChild(ellipse_in1);
 
 
-	var ellipse_in2 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_in2 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_in2.setAttribute("id","ellipse_" + type + "_" + number + "_in2" );
 	ellipse_in2.setAttribute("cx","40");
 	ellipse_in2.setAttribute("cy","120");
@@ -270,7 +270,7 @@ function create_ff(obj,type,number,conf,x,y)
 	document.getElementById("g_"+ type + "_" + number ).appendChild(ellipse_in2);
 
 
-	var ellipse_out1 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_out1 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_out1.setAttribute("id","ellipse_" + type + "_" + number + "_out1" );
 	ellipse_out1.setAttribute("cx","160");
 	ellipse_out1.setAttribute("cy","60");
@@ -282,7 +282,7 @@ function create_ff(obj,type,number,conf,x,y)
 	document.getElementById("g_"+ type + "_" + number ).appendChild(ellipse_out1);
 
 
-	var ellipse_out2 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_out2 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_out2.setAttribute("id","ellipse_" + type + "_" + number + "_out2" );
 	ellipse_out2.setAttribute("cx","160");
 	ellipse_out2.setAttribute("cy","120");
@@ -295,7 +295,7 @@ function create_ff(obj,type,number,conf,x,y)
 
 	if( type == "JKFF" )
 	{
-		var ellipse_clk = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+		var ellipse_clk = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 		ellipse_clk.setAttribute("id","ellipse_" + type + "_" + number + "_clk" );
 		ellipse_clk.setAttribute("cx","40");
 		ellipse_clk.setAttribute("cy","90");
@@ -597,14 +597,14 @@ function create_parts(obj,type,number,conf,x,y)
 	
 
 	// g(group)要素を作成
-	var g = document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+	var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 	g.setAttribute("id","g_"+ type + "_" + number );
 	document.getElementById("gatebox").appendChild(g);
 	g.setAttribute("transform","translate( " + x + " , " + y +" )" );
 	//グループ作成完了
 
 
-	var path = document.createElementNS("http://www.w3.org/2000/svg", "svg:path");
+	var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 	path.setAttribute("fill", "#FFFFFF");
 	path.setAttribute("d", "M 100 90" + d);
 	path.setAttribute("id", "path_" + type + "_" + number );
@@ -615,7 +615,7 @@ function create_parts(obj,type,number,conf,x,y)
 
 	if(type == "EXOR")
 	{
-		var path2 = document.createElementNS("http://www.w3.org/2000/svg", "svg:path");
+		var path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
 		path2.setAttribute("fill", "none");
 		path2.setAttribute("d", "M 100 90" + d2);
 		path2.setAttribute("id", "path2_" + type + "_" + number );
@@ -625,7 +625,7 @@ function create_parts(obj,type,number,conf,x,y)
 	}
 
 
-	var ellipse_out = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_out = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_out.setAttribute("id","ellipse_" + type + "_" + number + "_out" );
 	ellipse_out.setAttribute("cx", "160" );
 	ellipse_out.setAttribute("cy", "90" );
@@ -657,7 +657,7 @@ function create_parts(obj,type,number,conf,x,y)
 
 	if( type == "NOT" )	//NOTゲートは入力端子が１個なので例外処理
 	{
-		var ellipse_in1 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+		var ellipse_in1 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 		ellipse_in1.setAttribute("id","ellipse_" + type + "_" + number + "_in1" );
 		ellipse_in1.setAttribute("cx","40");
 		ellipse_in1.setAttribute("cy","90" );
@@ -685,7 +685,7 @@ function create_parts(obj,type,number,conf,x,y)
 
 		document.getElementById("g_"+ type + "_" + number ).appendChild(ellipse_in1);
 	}else{
-		var ellipse_in1 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+		var ellipse_in1 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 		ellipse_in1.setAttribute("id","ellipse_" + type + "_" + number + "_in1" );
 		ellipse_in1.setAttribute("cx","40");
 		ellipse_in1.setAttribute("cy","70");
@@ -713,7 +713,7 @@ function create_parts(obj,type,number,conf,x,y)
 		};
                 */
                
-		var ellipse_in2 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+		var ellipse_in2 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 		ellipse_in2.setAttribute("id","ellipse_" + type + "_" + number + "_in2" );
 		ellipse_in2.setAttribute("cx","40");
 		ellipse_in2.setAttribute("cy","110");
@@ -789,12 +789,12 @@ function create_line(type,number,conf , x1 , y1 , x2 , y2 , str )
 {
 
 	// g(group)要素を作成
-	var g = document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+	var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 	g.setAttribute("id","g_"+ type + "_" + number );
 	document.getElementById("linebox").appendChild(g);
 	//グループ作成完了
 
-	var line = document.createElementNS("http://www.w3.org/2000/svg", "svg:path");
+	var line = document.createElementNS("http://www.w3.org/2000/svg", "path");
 	line.setAttribute( "d", "M " + x1 + " " + y1 + " L " + x2 + " " + y2 );
 	line.setAttribute("stroke","black");
         line.setAttribute("style","stroke-linecap:square");
@@ -802,7 +802,7 @@ function create_line(type,number,conf , x1 , y1 , x2 , y2 , str )
 
 	document.getElementById( "g_"+ type + "_" + number ).appendChild(line);	
 
-	var ellipse_1 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_1 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_1.setAttribute("id","ellipse_" + type + "_" + number + "_1" );
 	ellipse_1.setAttribute("cx", x1 );
 	ellipse_1.setAttribute("cy", y1 );
@@ -814,7 +814,7 @@ function create_line(type,number,conf , x1 , y1 , x2 , y2 , str )
 	document.getElementById( "g_"+ type + "_" + number ).appendChild(ellipse_1);
 
 
-	var ellipse_2 = document.createElementNS("http://www.w3.org/2000/svg", "svg:ellipse");
+	var ellipse_2 = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 	ellipse_2.setAttribute("id","ellipse_" + type + "_" + number + "_2" );
 	ellipse_2.setAttribute("cx", x2 );
 	ellipse_2.setAttribute("cy", y2 );

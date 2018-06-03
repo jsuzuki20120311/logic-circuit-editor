@@ -213,14 +213,15 @@ window.onload = function()
 
                 source = source.replace(/<svg id="svgbox" width="100%" height="100%">/,"<svg width=\""+ width +"px\" height=\"" + height + "px\" viewBox=\"" + (x) + " " + (y) + " " + (width) + " " + (height) + "\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">");
 
-                var sfile = "data:image/svg+xml,"+encodeURIComponent(source);;
-		document.getElementById("BUTTON_write_svg").setAttribute("href",sfile);  
+                var sfile = "data:image/svg+xml,"+encodeURIComponent(source);
+                document.getElementById("BUTTON_write_svg").setAttribute("download", 'new-file.svg');
+                document.getElementById("BUTTON_write_svg").setAttribute("href",sfile);
                 
-		document.getElementById( "g_kakidashiarea_1" ).setAttribute("opacity","1");
+                document.getElementById( "g_kakidashiarea_1" ).setAttribute("opacity","1");
                 document.getElementById( "haikei" ).setAttribute("opacity","1");
 
                 document.getElementById("kuromarubox").removeChild( document.getElementById("create_kuromarubox") );   
-                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "g");
                 create_g.setAttribute( "id" , "create_kuromarubox" );
                 document.getElementById("kuromarubox").appendChild( create_g );
                 create_g.setAttribute("transform","translate( 0 , 0 )" );

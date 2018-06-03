@@ -1045,7 +1045,7 @@ var main = function( count , conf )
 
                 document.getElementById("kuromarubox").removeChild( document.getElementById("create_kuromarubox") );
     
-                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "g");
                 create_g.setAttribute( "id" , "create_kuromarubox" );
                 document.getElementById("kuromarubox").appendChild( create_g );
                 create_g.setAttribute("transform","translate( 0 , 0 )" );
@@ -1428,7 +1428,7 @@ var main = function( count , conf )
                 //document.getElementById( "editbox" ).appendChild( document.getElementById("back_edit") );
                 
                 document.getElementById("kuromarubox").removeChild( document.getElementById("create_kuromarubox") );   
-                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "g");
                 create_g.setAttribute( "id" , "create_kuromarubox" );
                 document.getElementById("kuromarubox").appendChild( create_g );
                 create_g.setAttribute("transform","translate( 0 , 0 )" );
@@ -1496,7 +1496,7 @@ var main = function( count , conf )
                 //document.getElementById( "editbox" ).appendChild( document.getElementById("back_edit") );
                 
                 document.getElementById("kuromarubox").removeChild( document.getElementById("create_kuromarubox") );   
-                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "g");
                 create_g.setAttribute( "id" , "create_kuromarubox" );
                 document.getElementById("kuromarubox").appendChild( create_g );
                 create_g.setAttribute("transform","translate( 0 , 0 )" );
@@ -1526,7 +1526,7 @@ var main = function( count , conf )
                 //document.getElementById( "editbox" ).appendChild( document.getElementById("back_edit") );
                 
                 document.getElementById("kuromarubox").removeChild( document.getElementById("create_kuromarubox") );   
-                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "svg:g");
+                var create_g =  document.createElementNS("http://www.w3.org/2000/svg", "g");
                 create_g.setAttribute( "id" , "create_kuromarubox" );
                 document.getElementById("kuromarubox").appendChild( create_g );
                 create_g.setAttribute("transform","translate( 0 , 0 )" );
@@ -2096,6 +2096,7 @@ var main = function( count , conf )
 
                //var sfile = "data:application/octet-stream," + encodeURIComponent(value);
                var sfile = "data:application/octet-stream," + encodeURI(value);
+               document.getElementById("BUTTON_pointgetter").setAttribute('download', 'new-file.eps');
                document.getElementById("BUTTON_pointgetter").setAttribute("href",sfile);
                
                this.change_mode_normal(); 
